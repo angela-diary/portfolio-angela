@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio personnel d'Angela, en formation en développement web."
+    />
+    <title>Angela Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playwrite+AU+SA:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="site-grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="navbar navbar-expand-xl">
+        <div class="container-fluid nav-shell">
+          <!-- Logo mobile -->
+          <a class="brand d-xl-none" href="#accueil">Angela.</a>
+
+          <!-- Menu mobile -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#main-nav"
+            aria-controls="main-nav"
+            aria-expanded="false"
+            aria-label="Ouvrir le menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="main-nav">
+            <!-- Navigation gauche -->
+            <ul class="navbar-nav nav-links">
+              <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
+              <li><a href="#projets" data-i18n="nav.projects">Projets</a></li>
+              <li><a href="#apropos" data-i18n="nav.about">À propos</a></li>
+              <li>
+                <a href="#competences" data-i18n="nav.skills">Compétences</a>
+              </li>
+              <!-- <li><a href="#contact" data-i18n="nav.cta">Contact</a></li> -->
+            </ul>
+
+            <!-- Logo central -->
+            <a
+              class="brand brand-desktop"
+              href="#accueil"
+              aria-label="Accueil Angela"
+            >
+              Angela.
+            </a>
+
+            <!-- Actions droite -->
+            <div class="nav-actions">
+              <div class="social-links" aria-label="Réseaux sociaux">
+                <a
+                  href="https://www.linkedin.com/in/angela-ahouansou-7523513b0/"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a
+                  href="https://github.com/angela-diary"
+                  target="_blank"
+                  aria-label="GitHub"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+
+              <button
+                id="language-toggle"
+                class="btn btn-link nav-link p-0 border-0"
+                aria-label="Passer en anglais"
+              >
+                <i class="fa-solid fa-globe"></i>
+              </button>
+
+              <button
+                class="theme-switcher"
+                id="theme-switcher"
+                type="button"
+                aria-label="Changer de thème"
+                title="Mode sombre"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+
+              <a class="button button-dark" href="#contact" data-i18n="nav.cta">
+                Me contacter
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="accueil" class="hero section-pad">
+        <div class="shape shape-circle" aria-hidden="true"></div>
+        <div class="shape shape-arc" aria-hidden="true"></div>
+        <div class="shape shape-dots" aria-hidden="true"></div>
+        <div class="container hero-content">
+          <!-- <p class="eyebrow" data-i18n="hero.eyebrow">PORTFOLIO · ANGELA</p> -->
+          <h1 data-i18n="hero.title">
+            Et si votre idée<br />devenait quelque chose<br /><em
+              >de réel&nbsp;?</em
+            >
+          </h1>
+          <a
+            href="#projets"
+            class="button button-dark hero-button"
+            data-i18n="hero.cta"
+            >Voir mes projets <span>↘</span></a
+          >
+          <!-- BOUTON A RESTORER PLUS TARD  -->
+          <!-- <a
+            class="button button-quiet"
+            href="assets/Angela-CV.pdf"
+            download
+            data-i18n="nav.cv"
+          >
+            CV
+          </a> -->
+        </div>
+        <p class="hero-index" aria-hidden="true">01—05</p>
+      </section>
+
+      <section id="projets" class="projects section-pad">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">
+              01 / <span data-i18n="projects.label">PROJETS</span>
+            </p>
+            <h2 data-i18n="projects.title">Ce que je construis.</h2>
+            <!-- <p data-i18n="projects.intro">
+              Des projets réels, conçus au fil de mes apprentissages.
+            </p> -->
+          </div>
+          <article class="project-card">
+            <div class="project-visual">
+              <span class="visual-tag">01</span>
+              <div class="croq-logo">Croq'<i>Express</i></div>
+              <div class="visual-menu">
+                <span>MENU</span><span>SOLO / BOX</span><span>COMMANDER</span>
+              </div>
+              <p>Projet web · restauration</p>
+            </div>
+            <div class="project-details">
+              <p class="project-number">(01)</p>
+              <h3>Croq'Express</h3>
+              <p data-i18n="project.croq.description">
+                Un projet web autour d’une activité de restauration :
+                présentation des produits, menu, formules Solo et Box, variantes
+                et commandes. Il comprend une gestion des utilisateurs et des
+                données côté backend.
+              </p>
+              <ul class="tech-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Bootstrap</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>MySQL</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" data-i18n="project.live">Voir le projet ↗</a>
+                <a href="#" data-i18n="project.github">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="apropos" class="about section-pad">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">
+              02 / <span data-i18n="about.label">À PROPOS</span>
+            </p>
+            <h2 data-i18n="about.title">&lt; Derrière le code /&gt;</h2>
+          </div>
+          <div class="about-copy">
+            <p data-i18n="about.p1">
+              Je m'appelle Angela et je suis en formation en développement web.
+            </p>
+            <p data-i18n="about.p2">
+              J'aime apprendre en faisant. Je pars d'une idée, je cherche, je
+              teste, je casse parfois des choses, puis je recommence. Et entre
+              deux « pourquoi ça ne marche pas ? », il y a généralement quelque
+              chose de nouveau que je finis par comprendre.
+            </p>
+            <p data-i18n="about.p3">
+              Je ne sais pas encore tout faire, loin de là. Mais c'est justement
+              ce qui me plaît : avoir quelque chose à découvrir, un problème à
+              résoudre ou une idée à transformer en projet. Chaque fois,
+              j'apprends un peu plus.
+            </p>
+            <p data-i18n="about.p4">
+              Ce portfolio rassemble une partie de tout ça : mes projets, mes
+              essais, mes apprentissages et les choses que j'ai eu envie de
+              construire.
+            </p>
+          </div>
+          <div class="about-mark" aria-hidden="true">A.</div>
+        </div>
+      </section>
+
+      <section id="competences" class="skills section-pad">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">
+              03 / <span data-i18n="skills.label">COMPÉTENCES</span>
+            </p>
+            <h2 data-i18n="skills.title">Les outils que j'utilise.</h2>
+            <!-- <p data-i18n="skills.intro">
+              Pas de chiffres : seulement ce avec quoi je travaille aujourd'hui.
+            </p> -->
+          </div>
+          <div class="skills-grid">
+            <div>
+              <p class="skill-kind" data-i18n="skills.frontend">Frontend</p>
+              <p>HTML · CSS · Bootstrap<br />JavaScript · React · Vite</p>
+            </div>
+            <div>
+              <p class="skill-kind" data-i18n="skills.backend">Backend</p>
+              <p>PHP · Laravel</p>
+            </div>
+            <div>
+              <p class="skill-kind" data-i18n="skills.database">
+                Base de données
+              </p>
+              <p>MySQL</p>
+            </div>
+            <div>
+              <p class="skill-kind" data-i18n="skills.tools">Outils</p>
+              <p>Git · GitHub</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section-pad">
+        <div class="container">
+          <div class="contact-grid">
+            <div>
+              <p class="eyebrow">
+                04 / <span data-i18n="contact.label">CONTACT</span>
+              </p>
+              <h2 data-i18n="contact.title">Parlons-en.</h2>
+              <p class="contact-lead" data-i18n="contact.copy">
+                Une question, une idée ou simplement envie d'échanger ?
+                N'hésitez pas à me contacter.
+              </p>
+            </div>
+            <form action="contact.php" method="post" class="contact-form">
+              <label
+                ><span data-i18n="form.name">Nom</span
+                ><input type="text" name="name" required
+              /></label>
+              <label
+                ><span data-i18n="form.email">Email</span
+                ><input type="email" name="email" required
+              /></label>
+              <label
+                ><span data-i18n="form.message">Message</span
+                ><textarea name="message" rows="4" required></textarea>
+              </label>
+              <button
+                class="button button-dark"
+                type="submit"
+                data-i18n="form.submit"
+              >
+                Envoyer le message <span>↗</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div class="footer-social">
+          <a href="mailto:votre-adresse@email.com" target="_blank">Gmail</a>
+          <a
+            href="https://www.linkedin.com/in/angela-ahouansou-7523513b0/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <!-- <a href="#" target="_blank">Facebook</a> -->
+          <a href="https://github.com/angela-diary" target="_blank">GitHub</a>
+        </div>
+        <a class="brand" href="accueil">Angela.</a>
+        <p>By Angela | All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1285 @@
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+  --ivory: #f5f3ee;
+  --ink: #171717;
+
+  --bg: var(--ivory);
+  --text: var(--ink);
+
+  --line: rgba(23, 23, 23, 0.16);
+  --line-strong: rgba(23, 23, 23, 0.35);
+
+  --muted: rgba(23, 23, 23, 0.62);
+  --soft: rgba(23, 23, 23, 0.04);
+
+  --nav-bg: rgba(245, 243, 238, 0.88);
+
+  --transition: 0.3s ease;
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+[data-theme="dark"] {
+  --bg: #171717;
+  --text: #f5f3ee;
+
+  --line: rgba(245, 243, 238, 0.16);
+  --line-strong: rgba(245, 243, 238, 0.35);
+
+  --muted: rgba(245, 243, 238, 0.62);
+  --soft: rgba(245, 243, 238, 0.05);
+
+  --nav-bg: rgba(23, 23, 23, 0.88);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  overflow-x: hidden;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+body,
+a,
+button,
+input,
+textarea {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Tous les paragraphes utilisent la même police */
+
+p {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--text);
+}
+
+/* =========================================================
+   GRAIN
+========================================================= */
+
+.site-grain {
+  position: fixed;
+  inset: 0;
+
+  opacity: 0.025;
+
+  z-index: 1000;
+  pointer-events: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--line);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-shell {
+  position: relative;
+
+  max-width: 1500px;
+
+  padding: 16px 3vw;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-collapse {
+  align-items: center;
+}
+
+.nav-links,
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  flex: 1;
+  gap: 22px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.04em;
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -4px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--text);
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.brand {
+  color: var(--text);
+
+  font-family: "Playwrite AU SA", cursive;
+  font-size: 22px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: opacity 0.3s ease;
+}
+
+.brand-desktop {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* =========================================================
+   ACTIONS DROITE
+========================================================= */
+
+.nav-actions {
+  flex: 1;
+
+  justify-content: flex-end;
+
+  gap: 16px;
+}
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.social-links a,
+.theme-switcher,
+#language-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.social-links a:hover,
+.theme-switcher:hover,
+#language-toggle:hover {
+  background: var(--text);
+  color: var(--bg);
+
+  transform: translateY(-2px);
+}
+
+.social-links i,
+.theme-switcher i,
+#language-toggle i {
+  font-size: 11px;
+}
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+/*
+   Une seule icône.
+   Le clic est géré en JavaScript.
+*/
+
+#language-toggle {
+  margin: 0;
+}
+
+#language-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   THEME SWITCHER
+========================================================= */
+
+.theme-switcher {
+  margin: 0;
+}
+
+.theme-switcher:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 38px;
+
+  padding: 10px 15px;
+
+  border: 1px solid var(--text);
+
+  background: transparent;
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.03em;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.button:hover {
+  background: var(--text);
+  color: var(--bg);
+
+  transform: translateY(-2px);
+}
+
+.button-dark {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.button-dark:hover {
+  background: transparent;
+  color: var(--text);
+}
+
+.button-quiet {
+  border-color: var(--line-strong);
+}
+
+/* =========================================================
+   MOBILE TOGGLER
+========================================================= */
+
+.navbar-toggler {
+  width: 30px;
+
+  padding: 7px 0;
+
+  border: 0;
+  border-radius: 0;
+
+  background: transparent;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler span {
+  display: block;
+
+  width: 28px;
+
+  margin: 7px 0;
+
+  border-top: 1px solid var(--text);
+
+  transition: transform 0.3s ease;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section-pad {
+  padding: 110px 0;
+}
+
+section {
+  position: relative;
+}
+
+/* =========================================================
+   SMALL LABELS
+========================================================= */
+
+.eyebrow,
+.project-number,
+.skill-kind,
+.visual-tag,
+.hero-index,
+.project-note {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  font-weight: 400;
+
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+
+  min-height: calc(100vh - 62px);
+
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .eyebrow {
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  max-width: 1050px;
+
+  margin: 0;
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(3rem, 7.9vw, 8.6rem);
+  font-weight: 400;
+
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+}
+
+.hero h1 em {
+  display: inline-block;
+
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+
+  transition: transform 0.5s ease;
+}
+
+.hero h1 em:hover {
+  transform: scale(1.02);
+}
+
+.hero-button {
+  margin-top: 48px;
+}
+
+.hero-button span,
+.contact button span {
+  display: inline-block;
+
+  margin-left: 15px;
+
+  font-size: 15px;
+
+  transition: transform 0.3s ease;
+}
+
+.hero-button:hover span,
+.contact button:hover span {
+  transform: translate(4px, -4px);
+}
+
+.hero-index {
+  position: absolute;
+
+  right: 3vw;
+  bottom: 28px;
+
+  margin: 0;
+
+  color: var(--muted);
+}
+
+/* =========================================================
+   ABSTRACT SHAPES
+========================================================= */
+
+.shape {
+  position: absolute;
+
+  border: 1px solid rgba(23, 23, 23, 0.17);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+[data-theme="dark"] .shape {
+  border-color: rgba(245, 243, 238, 0.17);
+}
+
+.shape-circle {
+  width: 48vw;
+  height: 48vw;
+
+  right: -14vw;
+  top: 11%;
+}
+
+.shape-arc {
+  width: 42vw;
+  height: 28vw;
+
+  left: -16vw;
+  top: 62%;
+}
+
+.shape-dots {
+  width: 120px;
+  height: 120px;
+
+  right: 13%;
+  top: 23%;
+
+  border: 0;
+  border-radius: 0;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(23, 23, 23, 0.3) 1px,
+    transparent 1.5px
+  );
+
+  background-size: 10px 10px;
+}
+
+[data-theme="dark"] .shape-dots {
+  background-image: radial-gradient(
+    circle,
+    rgba(245, 243, 238, 0.3) 1px,
+    transparent 1.5px
+  );
+}
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section-heading {
+  max-width: 600px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 28px;
+}
+
+.section-heading h2,
+.contact h2 {
+  margin: 0 0 26px;
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(2.8rem, 5.1vw, 5.4rem);
+  font-weight: 400;
+
+  letter-spacing: -0.065em;
+  line-height: 0.95;
+}
+
+.section-heading > p:not(.eyebrow),
+.contact-lead {
+  max-width: 430px;
+
+  margin-bottom: 0;
+
+  color: var(--muted);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+  border-top: 1px solid var(--line);
+}
+
+.project-card {
+  display: grid;
+
+  grid-template-columns: 1.4fr 0.8fr;
+
+  margin-top: 65px;
+
+  border-top: 1px solid var(--text);
+}
+
+.project-visual {
+  position: relative;
+
+  height: 500px;
+
+  padding: 35px;
+
+  overflow: hidden;
+
+  background: var(--text);
+  color: var(--bg);
+}
+
+.visual-tag {
+  color: var(--bg);
+}
+
+.croq-logo {
+  position: absolute;
+
+  top: 43%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: var(--bg);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 400;
+
+  letter-spacing: -0.08em;
+
+  white-space: nowrap;
+
+  transition: transform 0.5s ease;
+}
+
+.project-visual:hover .croq-logo {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.croq-logo i {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.visual-menu {
+  position: absolute;
+
+  left: 35px;
+  right: 35px;
+  bottom: 64px;
+
+  display: flex;
+
+  gap: 24px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid rgba(245, 243, 238, 0.5);
+
+  color: var(--bg);
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+}
+
+.project-visual > p {
+  position: absolute;
+
+  left: 35px;
+  bottom: 19px;
+
+  margin: 0;
+
+  color: var(--bg);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+
+  padding: 35px 0 20px 46px;
+}
+
+.project-number {
+  margin-bottom: 25px;
+
+  color: var(--muted);
+}
+
+.project-details h3 {
+  margin: 0 0 20px;
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+
+  letter-spacing: -0.05em;
+}
+
+.project-details > p:not(.project-number) {
+  margin-bottom: 28px;
+
+  color: var(--muted);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin: 0 0 34px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.tech-list li {
+  padding: 7px 9px;
+
+  border: 1px solid var(--line);
+
+  color: var(--text);
+
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+
+  transition: all 0.3s ease;
+}
+
+.tech-list li:hover {
+  background: var(--text);
+  color: var(--bg);
+
+  border-color: var(--text);
+
+  transform: translateY(-2px);
+}
+
+.project-links {
+  display: flex;
+
+  gap: 24px;
+
+  margin-top: auto;
+}
+
+.project-links a {
+  position: relative;
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+
+  text-decoration: none;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+.project-note {
+  margin: 20px 0 0;
+
+  color: var(--muted);
+
+  text-align: right;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+  border-top: 1px solid var(--line);
+}
+
+.about-copy {
+  max-width: 760px;
+
+  margin-left: auto;
+
+  font-family: "DM Mono", monospace;
+  font-size: 20px;
+  font-weight: 400;
+
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+}
+
+.about-copy p {
+  margin-bottom: 1.2em;
+
+  color: var(--text);
+
+  font-family: "DM Mono", monospace;
+  font-weight: 400;
+}
+
+/* .about h2 {
+  letter-spacing: 0.01em;
+} */
+
+.about-mark {
+  position: absolute;
+
+  right: 6vw;
+  bottom: 80px;
+
+  color: var(--text);
+
+  font-family: Georgia, serif;
+  font-size: 15vw;
+
+  line-height: 1;
+
+  opacity: 0.07;
+
+  user-select: none;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills {
+  border-top: 1px solid var(--line);
+}
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 75px;
+
+  border-top: 1px solid var(--text);
+}
+
+.skills-grid > div {
+  min-height: 170px;
+
+  padding: 24px;
+
+  border-right: 1px solid var(--line);
+}
+
+.skills-grid > div:first-child {
+  padding-left: 0;
+}
+
+.skills-grid > div:last-child {
+  border-right: 0;
+}
+
+.skills-grid .skill-kind {
+  margin-bottom: 25px;
+
+  color: var(--muted);
+}
+
+.skills-grid p:last-child {
+  margin: 0;
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+
+  letter-spacing: -0.03em;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+  border-top: 1px solid var(--line);
+}
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 13vw;
+}
+
+.contact-lead {
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.contact-form label {
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+}
+
+.contact-form label > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+  display: block;
+
+  width: 100%;
+
+  padding: 7px 0;
+
+  border: 0;
+  border-bottom: 1px solid var(--text);
+  border-radius: 0;
+  outline: 0;
+
+  background: transparent;
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-width: 2px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+
+  margin-top: 8px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  padding: 25px 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-social {
+  display: flex;
+  gap: 22px;
+}
+
+.footer-social a {
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+}
+
+.footer-inner p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+}
+
+/* =========================================================
+   BOOTSTRAP OVERRIDES
+========================================================= */
+
+.navbar-nav .nav-link {
+  color: var(--text);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--text);
+}
+
+.btn-link {
+  color: var(--text);
+}
+
+.btn-link:hover {
+  color: var(--text);
+}
+
+/* =========================================================
+   DARK MODE — ELEMENTS QUI UTILISAIENT DU BLANC EN DUR
+========================================================= */
+
+[data-theme="dark"] .project-visual {
+  background: var(--text);
+  color: var(--bg);
+}
+
+[data-theme="dark"] .project-visual > p,
+[data-theme="dark"] .visual-tag,
+[data-theme="dark"] .croq-logo {
+  color: var(--bg);
+}
+
+[data-theme="dark"] .visual-menu {
+  border-color: rgba(245, 243, 238, 0.5);
+}
+
+[data-theme="dark"] .site-grain {
+  opacity: 0.018;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLETTE
+========================================================= */
+
+@media (max-width: 1199px) {
+  .brand-desktop {
+    display: none;
+  }
+
+  .navbar-collapse {
+    padding: 26px 0;
+
+    background: var(--bg);
+  }
+
+  .nav-links,
+  .nav-actions {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 19px;
+  }
+
+  .nav-actions {
+    margin-top: 26px;
+  }
+
+  .social-links {
+    gap: 12px;
+  }
+
+  .social-links a,
+  .theme-switcher,
+  #language-toggle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .social-links i,
+  .theme-switcher i,
+  #language-toggle i {
+    font-size: 12px;
+  }
+
+  .nav-actions .button {
+    width: auto;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .section-pad {
+    padding: 90px 0;
+  }
+
+  .nav-shell {
+    padding: 13px 5vw;
+  }
+
+  .hero {
+    min-height: calc(100vh - 55px);
+  }
+
+  .hero h1 {
+    letter-spacing: -0.065em;
+  }
+
+  .shape-circle {
+    width: 75vw;
+    height: 75vw;
+  }
+
+  .shape-dots {
+    top: 16%;
+    right: 5%;
+  }
+
+  .project-card,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual {
+    height: 350px;
+  }
+
+  .project-details {
+    padding: 28px 0;
+  }
+
+  .about-copy {
+    font-size: 1.25rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 45px;
+  }
+
+  .skills-grid > div {
+    min-height: 130px;
+
+    padding: 18px;
+
+    border-bottom: 1px solid var(--line);
+  }
+
+  .skills-grid > div:first-child {
+    padding-left: 18px;
+  }
+
+  .skills-grid > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .footer-social {
+    gap: 16px;
+  }
+
+  .project-note {
+    text-align: left;
+  }
+
+  .contact-grid {
+    gap: 50px;
+  }
+}
+
+/* =========================================================
+   PETITS ÉCRANS
+========================================================= */
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+
+  .section-heading h2,
+  .contact h2 {
+    font-size: 2.8rem;
+  }
+
+  .project-visual {
+    height: 300px;
+    padding: 25px;
+  }
+
+  .croq-logo {
+    font-size: 3rem;
+  }
+
+  .visual-menu {
+    left: 25px;
+    right: 25px;
+
+    gap: 12px;
+
+    font-size: 8px;
+  }
+
+  .project-visual > p {
+    left: 25px;
+  }
+
+  .project-links {
+    flex-direction: column;
+
+    gap: 12px;
+  }
+}
