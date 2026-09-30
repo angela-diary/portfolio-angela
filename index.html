@@ -1,327 +1,462 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Angela — Développement web</title>
+
     <meta
       name="description"
-      content="Portfolio personnel d'Angela, en formation en développement web."
+      content="Portfolio d’Angela, étudiante en développement web à l’EIG Bénin."
     />
-    <title>Angela Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playwrite+AU+SA:wght@100..400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@500;600&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-    <div class="site-grain" aria-hidden="true"></div>
 
+  <body id="top">
+    <!-- HEADER -->
     <header class="site-header">
-      <nav class="navbar navbar-expand-xl">
-        <div class="container-fluid nav-shell">
-          <!-- Logo mobile -->
-          <a class="brand d-xl-none" href="#accueil">Angela.</a>
+      <div class="container header-inner">
+        <a href="#top" class="brand"> Angela </a>
 
-          <!-- Menu mobile -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#main-nav"
-            aria-controls="main-nav"
-            aria-expanded="false"
-            aria-label="Ouvrir le menu"
+        <nav class="main-nav">
+          <a href="#projects">Projets</a>
+          <a href="#about">À propos</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-socials">
+          <a
+            href="https://github.com/angela-diary"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
           >
-            <span></span>
-            <span></span>
-          </button>
+            <i class="fa-brands fa-github"></i>
+          </a>
 
-          <div class="collapse navbar-collapse" id="main-nav">
-            <!-- Navigation gauche -->
-            <ul class="navbar-nav nav-links">
-              <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
-              <li><a href="#projets" data-i18n="nav.projects">Projets</a></li>
-              <li><a href="#apropos" data-i18n="nav.about">À propos</a></li>
-              <li>
-                <a href="#competences" data-i18n="nav.skills">Compétences</a>
-              </li>
-              <!-- <li><a href="#contact" data-i18n="nav.cta">Contact</a></li> -->
-            </ul>
-
-            <!-- Logo central -->
-            <a
-              class="brand brand-desktop"
-              href="#accueil"
-              aria-label="Accueil Angela"
-            >
-              Angela.
-            </a>
-
-            <!-- Actions droite -->
-            <div class="nav-actions">
-              <div class="social-links" aria-label="Réseaux sociaux">
-                <a
-                  href="https://www.linkedin.com/in/angela-ahouansou-7523513b0/"
-                  target="_blank"
-                  aria-label="LinkedIn"
-                >
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-
-                <a
-                  href="https://github.com/angela-diary"
-                  target="_blank"
-                  aria-label="GitHub"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-
-              <button
-                id="language-toggle"
-                class="btn btn-link nav-link p-0 border-0"
-                aria-label="Passer en anglais"
-              >
-                <i class="fa-solid fa-globe"></i>
-              </button>
-
-              <button
-                class="theme-switcher"
-                id="theme-switcher"
-                type="button"
-                aria-label="Changer de thème"
-                title="Mode sombre"
-              >
-                <i class="fa-solid fa-moon"></i>
-              </button>
-
-              <a class="button button-dark" href="#contact" data-i18n="nav.cta">
-                Me contacter
-              </a>
-            </div>
-          </div>
+          <a
+            href="https://www.linkedin.com/in/angela-ahouansou-7523513b0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
         </div>
-      </nav>
+      </div>
     </header>
 
     <main>
-      <section id="accueil" class="hero section-pad">
-        <div class="shape shape-circle" aria-hidden="true"></div>
-        <div class="shape shape-arc" aria-hidden="true"></div>
-        <div class="shape shape-dots" aria-hidden="true"></div>
-        <div class="container hero-content">
-          <!-- <p class="eyebrow" data-i18n="hero.eyebrow">PORTFOLIO · ANGELA</p> -->
-          <h1 data-i18n="hero.title">
-            Et si votre idée<br />devenait quelque chose<br /><em
-              >de réel&nbsp;?</em
-            >
-          </h1>
-          <a
-            href="#projets"
-            class="button button-dark hero-button"
-            data-i18n="hero.cta"
-            >Voir mes projets <span>↘</span></a
-          >
-          <!-- BOUTON A RESTORER PLUS TARD  -->
-          <!-- <a
-            class="button button-quiet"
-            href="assets/Angela-CV.pdf"
-            download
-            data-i18n="nav.cv"
-          >
-            CV
-          </a> -->
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-topline">
+            <span class="hero-number">01</span>
+            <span>Développement web</span>
+          </div>
+
+          <div class="hero-main">
+            <h1>
+              Je transforme des idées
+              <span>en expériences web.</span>
+            </h1>
+
+            <div class="hero-side">
+              <p>
+                Étudiante en développement web à l’EIG Bénin, je construis des
+                applications web en travaillant aussi bien sur l’interface que
+                sur la logique qui se trouve derrière.
+              </p>
+
+              <a href="#projects" class="text-link">
+                Explorer mes projets
+                <i class="fa-solid fa-arrow-down"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-bottom">
+            <span>HTML / CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>PHP</span>
+            <span>Laravel</span>
+            <span>MySQL</span>
+          </div>
         </div>
-        <p class="hero-index" aria-hidden="true">01—05</p>
       </section>
 
-      <section id="projets" class="projects section-pad">
+      <!-- PROJECTS -->
+      <section class="projects-section" id="projects">
         <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">
-              01 / <span data-i18n="projects.label">PROJETS</span>
-            </p>
-            <h2 data-i18n="projects.title">Ce que je construis.</h2>
-            <!-- <p data-i18n="projects.intro">
-              Des projets réels, conçus au fil de mes apprentissages.
-            </p> -->
-          </div>
-          <article class="project-card">
-            <div class="project-visual">
-              <span class="visual-tag">01</span>
-              <div class="croq-logo">Croq'<i>Express</i></div>
-              <div class="visual-menu">
-                <span>MENU</span><span>SOLO / BOX</span><span>COMMANDER</span>
-              </div>
-              <p>Projet web · restauration</p>
+          <div class="section-intro">
+            <div>
+              <span class="section-number">02</span>
+              <p class="section-label">Sélection de projets</p>
             </div>
-            <div class="project-details">
-              <p class="project-number">(01)</p>
-              <h3>Croq'Express</h3>
-              <p data-i18n="project.croq.description">
-                Un projet web autour d’une activité de restauration :
-                présentation des produits, menu, formules Solo et Box, variantes
-                et commandes. Il comprend une gestion des utilisateurs et des
-                données côté backend.
+
+            <h2>
+              Des projets qui montrent
+              <em>ce que je sais faire.</em>
+            </h2>
+          </div>
+
+          <!-- Rappel+ -->
+          <article class="project project-featured">
+            <div class="project-image">
+              <img
+                src="assets/images/rappel-plus.png"
+                alt="Aperçu de l'application Rappel+"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="project-info">
+              <div class="project-heading">
+                <span class="project-index">01</span>
+
+                <div>
+                  <p class="project-category">Projet personnel · 2026</p>
+
+                  <h3>Rappel+</h3>
+                </div>
+              </div>
+
+              <p class="project-description">
+                Une application web pensée pour organiser ses tâches et
+                rendez-vous et automatiser le traitement des rappels.
               </p>
-              <ul class="tech-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Bootstrap</li>
-                <li>JavaScript</li>
-                <li>PHP</li>
-                <li>Laravel</li>
-                <li>MySQL</li>
-              </ul>
-              <div class="project-links">
-                <a href="#" data-i18n="project.live">Voir le projet ↗</a>
-                <a href="#" data-i18n="project.github">GitHub ↗</a>
+
+              <div class="project-bottom">
+                <div class="project-tech">
+                  <span>React</span>
+                  <span>JavaScript</span>
+                  <span>Supabase</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    href="https://rappelplus.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >
+                    Voir le site
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+
+                  <a
+                    href="https://github.com/angela-diary/rappelplus"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-icon-link"
+                    aria-label="Voir le repository GitHub de Rappel+"
+                    title="GitHub"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </article>
+
+          <!-- Croq'Express -->
+          <article class="project project-reverse">
+            <div class="project-image">
+              <img
+                src="assets/images/croq-express.png"
+                alt="Aperçu du site Croq’Express"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="project-info">
+              <div class="project-heading">
+                <span class="project-index">02</span>
+
+                <div>
+                  <p class="project-category">Projet personnel · 2026</p>
+
+                  <h3>Croq’Express</h3>
+                </div>
+              </div>
+
+              <p class="project-description">
+                Un site de commande construit autour d’un menu, de formules,
+                d’options et d’un panier.
+              </p>
+
+              <div class="project-bottom">
+                <div class="project-tech">
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>Bootstrap</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    href="https://croqexpress.free.nf/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >
+                    Voir le site
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+
+                  <a
+                    href="https://github.com/angela-diary/croq-express"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-icon-link"
+                    aria-label="Voir le repository GitHub de Croq’Express"
+                    title="GitHub"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ESC -->
+          <article class="project project-featured">
+            <div class="project-image">
+              <img
+                src="assets/images/esc.png"
+                alt="Aperçu du projet ESC"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="project-info">
+              <div class="project-heading">
+                <span class="project-index">03</span>
+
+                <div>
+                  <p class="project-category">Hackathon · 2026</p>
+
+                  <h3>ESC</h3>
+                </div>
+              </div>
+
+              <p class="project-description">
+                Un site web conçu pour présenter les formations de l’École de
+                Savonnerie et de Cosmétique, avec un espace d’administration.
+              </p>
+
+              <div class="project-bottom">
+                <div class="project-tech">
+                  <span>Laravel</span>
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    href="https://esc-benin-formation.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                  >
+                    Voir le site
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+
+                  <!-- <a
+                  href="https://github.com/angela-diary/esc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-icon-link"
+                  aria-label="Voir le repository GitHub de ESC"
+                  title="GitHub"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a> -->
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- AngeliSky retiré temporairement -->
         </div>
       </section>
 
-      <section id="apropos" class="about section-pad">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">
-              02 / <span data-i18n="about.label">À PROPOS</span>
-            </p>
-            <h2 data-i18n="about.title">&lt; Derrière le code /&gt;</h2>
-          </div>
-          <div class="about-copy">
-            <p data-i18n="about.p1">
-              Je m'appelle Angela et je suis en formation en développement web.
-            </p>
-            <p data-i18n="about.p2">
-              J'aime apprendre en faisant. Je pars d'une idée, je cherche, je
-              teste, je casse parfois des choses, puis je recommence. Et entre
-              deux « pourquoi ça ne marche pas ? », il y a généralement quelque
-              chose de nouveau que je finis par comprendre.
-            </p>
-            <p data-i18n="about.p3">
-              Je ne sais pas encore tout faire, loin de là. Mais c'est justement
-              ce qui me plaît : avoir quelque chose à découvrir, un problème à
-              résoudre ou une idée à transformer en projet. Chaque fois,
-              j'apprends un peu plus.
-            </p>
-            <p data-i18n="about.p4">
-              Ce portfolio rassemble une partie de tout ça : mes projets, mes
-              essais, mes apprentissages et les choses que j'ai eu envie de
-              construire.
-            </p>
-          </div>
-          <div class="about-mark" aria-hidden="true">A.</div>
-        </div>
-      </section>
+      <!-- ABOUT -->
+      <section class="about-section" id="about">
+        <div class="container about-inner">
+          <div class="about-heading">
+            <span class="section-number">03</span>
 
-      <section id="competences" class="skills section-pad">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">
-              03 / <span data-i18n="skills.label">COMPÉTENCES</span>
-            </p>
-            <h2 data-i18n="skills.title">Les outils que j'utilise.</h2>
-            <!-- <p data-i18n="skills.intro">
-              Pas de chiffres : seulement ce avec quoi je travaille aujourd'hui.
-            </p> -->
+            <p class="section-label">À propos</p>
           </div>
-          <div class="skills-grid">
-            <div>
-              <p class="skill-kind" data-i18n="skills.frontend">Frontend</p>
-              <p>HTML · CSS · Bootstrap<br />JavaScript · React · Vite</p>
-            </div>
-            <div>
-              <p class="skill-kind" data-i18n="skills.backend">Backend</p>
-              <p>PHP · Laravel</p>
-            </div>
-            <div>
-              <p class="skill-kind" data-i18n="skills.database">
-                Base de données
-              </p>
-              <p>MySQL</p>
-            </div>
-            <div>
-              <p class="skill-kind" data-i18n="skills.tools">Outils</p>
-              <p>Git · GitHub</p>
-            </div>
+
+          <div class="about-content">
+            <h2>
+              Je préfère
+              <em>construire</em>
+              pour apprendre.
+            </h2>
+
+            <p>
+              Je suis actuellement en formation de développement web à l’EIG
+              Bénin. Mes projets sont pour moi un moyen de comprendre
+              concrètement comment une application est pensée, développée et
+              reliée à ses données.
+            </p>
+
+            <p>
+              J’aime particulièrement passer d’une interface à sa logique
+              fonctionnelle : formulaires, authentification, bases de données,
+              réservations ou gestion de contenu.
+            </p>
+
+            <a
+              href="assets/documents/CV-Angela-Ahouansou.pdf"
+              target="_blank"
+              class="text-link"
+            >
+              Consulter mon CV
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="contact section-pad">
+      <!-- CONTACT -->
+      <section class="contact-section" id="contact">
         <div class="container">
-          <div class="contact-grid">
-            <div>
-              <p class="eyebrow">
-                04 / <span data-i18n="contact.label">CONTACT</span>
-              </p>
-              <h2 data-i18n="contact.title">Parlons-en.</h2>
-              <p class="contact-lead" data-i18n="contact.copy">
-                Une question, une idée ou simplement envie d'échanger ?
-                N'hésitez pas à me contacter.
+          <div class="contact-top">
+            <span class="section-number">04</span>
+
+            <p class="section-label">Contact</p>
+          </div>
+
+          <div class="contact-content">
+            <div class="contact-intro">
+              <h2>
+                Un projet,
+                <em>une opportunité ?</em>
+              </h2>
+
+              <p>
+                Vous pouvez m’écrire directement depuis ce formulaire. Je
+                recherche actuellement un stage en développement web.
               </p>
             </div>
-            <form action="contact.php" method="post" class="contact-form">
-              <label
-                ><span data-i18n="form.name">Nom</span
-                ><input type="text" name="name" required
-              /></label>
-              <label
-                ><span data-i18n="form.email">Email</span
-                ><input type="email" name="email" required
-              /></label>
-              <label
-                ><span data-i18n="form.message">Message</span
-                ><textarea name="message" rows="4" required></textarea>
-              </label>
-              <button
-                class="button button-dark"
-                type="submit"
-                data-i18n="form.submit"
-              >
-                Envoyer le message <span>↗</span>
-              </button>
+
+            <form class="contact-form" action="contact.php" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name"> Nom </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Votre nom"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email"> Email </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="votre@email.com"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject"> Sujet </label>
+
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Sujet de votre message"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message"> Message </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Votre message..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-footer">
+                <p>Une question, une opportunité de stage ou un projet ?</p>
+
+                <button type="submit" class="button button-dark form-submit">
+                  Envoyer le message
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
             </form>
+
+            <div class="contact-socials">
+              <a
+                href="https://www.linkedin.com/in/angela-ahouansou-7523513b0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+              <a
+                href="https://github.com/angela-diary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
+    <!-- FOOTER -->
+    <footer class="site-footer">
       <div class="container footer-inner">
-        <div class="footer-social">
-          <a href="mailto:votre-adresse@email.com" target="_blank">Gmail</a>
-          <a
-            href="https://www.linkedin.com/in/angela-ahouansou-7523513b0/"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <!-- <a href="#" target="_blank">Facebook</a> -->
-          <a href="https://github.com/angela-diary" target="_blank">GitHub</a>
-        </div>
-        <a class="brand" href="accueil">Angela.</a>
-        <p>By Angela | All rights reserved.</p>
+        <p>© 2026 Angela</p>
+
+        <a href="#top">
+          Retour en haut
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
       </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
   </body>
 </html>
