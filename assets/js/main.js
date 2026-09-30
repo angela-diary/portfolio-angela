@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Menu mobile
   menuButton.addEventListener("click", () => {
     const isOpen = mainNav.classList.toggle("active");
 
@@ -19,22 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("menu-open", isOpen);
   });
 
+  // Fermer le menu après avoir cliqué sur un lien
   mainNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       mainNav.classList.remove("active");
       menuButton.classList.remove("active");
+
       menuButton.setAttribute("aria-expanded", "false");
       menuButton.setAttribute("aria-label", "Ouvrir le menu");
+
       document.body.classList.remove("menu-open");
     });
   });
 
-  /*
-   * Smooth reveal of project images and sections.
-   * The content remains visible if IntersectionObserver
-   * is not available.
-   */
-
+  // Apparition progressive des sections et projets
   const revealElements = document.querySelectorAll(
     ".project, .about-layout, .contact-layout",
   );
@@ -62,16 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /*
-   * Close the mobile menu when the viewport becomes larger.
-   */
-
+  // Fermer le menu mobile lorsque l'écran devient plus large
   window.addEventListener("resize", () => {
     if (window.innerWidth > 850) {
       mainNav.classList.remove("active");
       menuButton.classList.remove("active");
+
       menuButton.setAttribute("aria-expanded", "false");
       menuButton.setAttribute("aria-label", "Ouvrir le menu");
+
       document.body.classList.remove("menu-open");
     }
   });

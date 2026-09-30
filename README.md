@@ -8,11 +8,11 @@ Ce projet est le site portfolio personnel utilisé pour présenter une sélectio
 
 Le site met notamment en avant :
 
-* mon parcours en développement web ;
-* une sélection de projets réalisés ;
-* les technologies utilisées sur ces projets ;
-* un formulaire permettant de me contacter ;
-* mes liens GitHub et LinkedIn.
+- mon parcours en développement web ;
+- une sélection de projets réalisés ;
+- les technologies utilisées sur ces projets ;
+- un formulaire permettant de me contacter ;
+- mes liens GitHub et LinkedIn.
 
 ## Projets
 
@@ -38,14 +38,13 @@ Site web réalisé dans le cadre d’un hackathon pour une école spécialisée 
 
 **Technologies :** Laravel, PHP, MySQL, HTML, CSS
 
-
 ## Technologies du portfolio
 
-* HTML
-* CSS
-* JavaScript
-* Bootstrap
-* PHP
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- PHP
 
 ## Structure
 
@@ -77,7 +76,7 @@ Le formulaire de contact utilise PHP et nécessite donc un environnement permett
 
 Le portfolio est accessible ici :
 
-**[Voir le portfolio](URL-DU-PORTFOLIO)**
+[**Voir le portfolio →**](https://angelah-portfolio.netlify.app/)
 
 ## Auteur
 
