@@ -26,7 +26,7 @@ Application web de gestion de tâches et de rendez-vous avec système de rappels
 
 ### Croq’Express
 
-Site de commande en ligne pour un concept de restauration, avec menu, formules, options et panier.
+Site de commande en ligne avec menu, formules, options et panier.
 
 **Technologies :** PHP, MySQL, Bootstrap, JavaScript
 
@@ -46,38 +46,29 @@ Site web réalisé dans le cadre d’un hackathon pour une école spécialisée 
 - Bootstrap
 - PHP
 
-## Structure
-
-```text
-portfolio/
-├── assets/
-│   ├── css/
-│   ├── images/
-│   └── documents/
-├── index.html
-├── contact.php
-└── README.md
-```
-
 ## Installation
 
 Cloner le dépôt :
 
-```bash
-git clone <URL-DU-DEPOT>
-cd <NOM-DU-DEPOT>
-```
+    git clone https://github.com/angela-diary/portfolio.git
+    cd portfolio
 
-Lancer ensuite le projet avec un serveur local.
+Lancer le serveur PHP intégré :
+
+    php -S localhost:8000
+
+Puis ouvrir dans le navigateur :
+
+    http://localhost:8000
 
 Le formulaire de contact utilise PHP et nécessite donc un environnement permettant d’exécuter PHP.
 
 ## Aperçu
 
-Le portfolio est accessible ici :
-
-[**Voir le portfolio →**](https://angelah-portfolio.netlify.app/)
+[Voir le portfolio](https://angelah-portfolio.netlify.app/)
 
 ## Auteur
 
 Angela Ahouansou
+
+[GitHub](https://github.com/angela-diary) · [LinkedIn](https://www.linkedin.com/in/angela-ahouansou-7523513b0/)
