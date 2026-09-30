@@ -55,14 +55,6 @@ Cloner le dépôt :
     git clone https://github.com/angela-diary/portfolio.git
     cd portfolio
 
-Lancer le serveur PHP intégré :
-
-    php -S localhost:8000
-
-Puis ouvrir dans le navigateur :
-
-    http://localhost:8000
-
 Le formulaire de contact utilise PHP et nécessite donc un environnement permettant d’exécuter PHP.
 
 ## Aperçu
