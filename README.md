@@ -18,15 +18,15 @@ Le site met notamment en avant :
 
 ### Rappel+
 
-Application web de gestion de tâches et de rendez-vous avec système de rappels.
+Application web permettant de gérer des tâches et des rendez-vous depuis une même interface. Le projet intègre la création, la modification et le suivi des éléments, ainsi qu’un système de rappels automatisés. Les données et certaines fonctions serveur sont gérées avec Supabase.
 
 **Technologies :** React, JavaScript, Supabase
 
-[GitHub](https://github.com/angela-diary/rappelplus)
+[Site](https://rappelplus.vercel.app/) · [GitHub](https://github.com/angela-diary/rappelplus)
 
 ### Croq’Express
 
-Site de commande en ligne avec menu, formules, options et panier.
+Site de commande en ligne développé pour présenter un menu de croques et gérer leur commande. L’utilisateur peut choisir une composition, sélectionner une formule, ajouter des suppléments et gérer les articles dans un panier avant la commande.
 
 **Technologies :** PHP, MySQL, Bootstrap, JavaScript
 
@@ -34,9 +34,11 @@ Site de commande en ligne avec menu, formules, options et panier.
 
 ### ESC
 
-Site web réalisé dans le cadre d’un hackathon pour une école spécialisée dans la savonnerie et la cosmétique.
+Site web réalisé en équipe lors d’un hackathon pour présenter les formations d’une école spécialisée dans la savonnerie et la cosmétique. Le projet comprend les pages de présentation des formations ainsi qu’un espace d’administration développé avec Laravel pour gérer certains contenus du site.
 
 **Technologies :** Laravel, PHP, MySQL, HTML, CSS
+
+[Site](https://esc-benin-formation.vercel.app/)
 
 ## Technologies du portfolio
 
