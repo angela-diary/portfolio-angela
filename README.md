@@ -73,4 +73,3 @@ Le formulaire de contact utilise PHP et nécessite donc un environnement permett
 
 Angela Ahouansou
 
-[GitHub](https://github.com/angela-diary) · [LinkedIn](https://www.linkedin.com/in/angela-ahouansou-7523513b0/)
